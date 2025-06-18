@@ -23,6 +23,14 @@ app.add_middleware(
 def read_root():
     return {"message": "Hello from FastAPI"}
 
+@app.get("/hello")
+def health():
+    return {"message": "Hello!"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 @app.get("/mongo-info")
 def mongo_info():
     try:
